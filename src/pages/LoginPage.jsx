@@ -27,8 +27,8 @@ const LoginPage = () => {
     }
 
   return (
-    <div className='min-h-screen bg-cover bg-center flex items-center justify-center gap-8 sm:justify-evenly
-    max-sm:flex-col backdrop-blur-2xl'>
+    <div className='min-h-screen flex items-center justify-center gap-8 sm:justify-evenly
+    max-sm:flex-col backdrop-blur-md'>
       {/* ----------left------------ */}
         <img src={assets.logo_big} alt="" className='w-[min(30vw,250px)]' />
 
@@ -45,27 +45,27 @@ const LoginPage = () => {
           </h2>
 
             {currState === "Sign up" && !isDataSubmitted && (
-              <input onChange={(e)=>setFullName(e.target.value)} value={fullName}
-               type="text" className='p-2 border border-gray-500 rounded-md focus:outline-none' 
-              placeholder="Full Name" required />
+               <input onChange={(e)=>setFullName(e.target.value)} value={fullName}
+                type="text" className='p-2 bg-black/20 border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-400' 
+               placeholder="Full Name" required />
             )}
 
             {!isDataSubmitted && (
-              <>
-               <input onChange={(e)=>setEmail(e.target.value)} value={email}
-                type="email" placeholder='Email Address' required className='p-2 border border-gray-500
-               rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500' />
-               <input onChange={(e)=>setPassword(e.target.value)} value={password}
-                type="password" placeholder='password' required className='p-2 border border-gray-500
-               rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500' />
-              </>
+               <>
+                <input onChange={(e)=>setEmail(e.target.value)} value={email}
+                 type="email" placeholder='Email Address' required className='p-2 bg-black/20 border border-gray-500
+                rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-400' />
+                <input onChange={(e)=>setPassword(e.target.value)} value={password}
+                 type="password" placeholder='password' required className='p-2 bg-black/20 border border-gray-500
+                rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 text-white placeholder-gray-400' />
+               </>
             )}
 
 
             {currState === "Sign up" && isDataSubmitted && (
               <textarea onChange={(e)=>setBio(e.target.value)} value={bio}
-              rows={4} className='p-2 border border-gray-500 rounded-md focus:outline-none focus:ring-2
-              focus:ring-indigo-500' placeholder='provide a short bio...' required></textarea>
+              rows={4} className='p-2 bg-black/20 border border-gray-500 rounded-md focus:outline-none focus:ring-2
+              focus:ring-purple-500 text-white placeholder-gray-400' placeholder='provide a short bio...' required></textarea>
             )}
 
             <button type='submit' className='py-3 bg-gradient-to-r from-purple-400 to-violet-600 text-white
